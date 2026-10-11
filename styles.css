@@ -167,9 +167,10 @@ svg .fill { fill: currentColor; stroke: none; }
   transform: translateX(-50%);
   max-width: calc(100vw - 32px);
   padding: 5px;
-  background: color-mix(in srgb, var(--accent) 78%, transparent);
-  backdrop-filter: saturate(1.6) blur(18px); -webkit-backdrop-filter: saturate(1.6) blur(18px);
-  border: 1px solid rgba(251, 245, 241, .22);
+  background: rgba(138, 87, 83, .5);
+  backdrop-filter: blur(8px) saturate(1.5) brightness(.82);
+  -webkit-backdrop-filter: blur(8px) saturate(1.5) brightness(.82);
+  border: 1px solid rgba(255, 255, 255, .32);
   border-radius: 999px;
   box-shadow: 0 12px 30px -12px rgba(95, 35, 51, .55);
 }
@@ -182,7 +183,7 @@ svg .fill { fill: currentColor; stroke: none; }
 .pill a {
   display: block; padding: 10px 16px; border-radius: 999px;
   font-size: 13px; font-weight: 600; letter-spacing: .02em; white-space: nowrap;
-  color: #fff; text-shadow: 0 1px 2px rgba(60, 20, 28, .25);
+  color: #fff; text-shadow: 0 1px 2px rgba(50, 15, 22, .5);
   transition: background .25s, color .25s;
 }
 .pill a:hover { color: #fff; background: rgba(251, 245, 241, .12); }
@@ -497,16 +498,16 @@ details[open] .acc__icon::after { transform: rotate(0deg); }
 }
 
 /* ---------- Карусели (общее) ---------- */
-.teach__track, .reviews__track {
+.reviews__track {
   display: flex; gap: 12px;
   overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
   scrollbar-width: none; overscroll-behavior-x: contain;
   margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter);
 }
-.teach__track::-webkit-scrollbar, .reviews__track::-webkit-scrollbar { display: none; }
-.teach__track > li, .reviews__track > li { flex: none; scroll-snap-align: start; }
+.reviews__track::-webkit-scrollbar { display: none; }
+.reviews__track > li { flex: none; scroll-snap-align: start; }
 @media (min-width: 1440px) {
-  .teach__track, .reviews__track { margin-right: calc((100vw - var(--wrap)) / -2); }
+  .reviews__track { margin-right: calc((100vw - var(--wrap)) / -2); }
 }
 .carousel__bar { display: flex; align-items: center; gap: 24px; margin-top: 28px; }
 .carousel__progress { flex: 1; height: 1px; background: var(--line-strong); }
@@ -517,21 +518,50 @@ details[open] .acc__icon::after { transform: rotate(0deg); }
 }
 
 /* ---------- Образовательная деятельность ---------- */
-.teach__lead { margin-top: 28px; max-width: 46ch; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.55; color: var(--ink-2); text-wrap: pretty; }
-.teach-card {
-  width: min(78vw, 330px); min-height: 400px;
-  display: flex; flex-direction: column; gap: 14px;
-  padding: 30px; background: var(--paper);
-  border: 1px solid var(--line-strong); border-radius: 2px;
+.teach {
+  display: grid; gap: 40px;
+  padding: clamp(24px, 4.5vw, 64px);
+  background: var(--bg-alt); border-radius: 2px;
 }
-.teach-card .num { font-size: 48px; margin-bottom: auto; padding-bottom: 40px; }
-.teach-card h3 { font-size: 19px; font-weight: 600; line-height: 1.25; letter-spacing: .02em; text-transform: uppercase; text-wrap: balance; }
-.teach-card p { font-size: 15px; line-height: 1.55; color: var(--ink-2); }
-.teach-card--wine { background: var(--wine); border-color: var(--wine); color: var(--on-accent); }
-.teach-card--wine .num { color: var(--accent-soft); }
-.teach-card--wine p { color: rgba(251, 245, 241, .82); }
-.teach-card--cta { background: var(--accent-soft); border-color: var(--accent-soft); }
-.teach-card--cta .btn { align-self: flex-start; margin-top: 8px; }
+.teach__body { display: grid; gap: 22px; align-content: start; }
+.teach__quote { font-family: var(--serif); font-style: italic; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.15; color: var(--accent); text-wrap: balance; }
+.teach__lead { max-width: 46ch; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.55; text-wrap: pretty; }
+.teach__points { display: grid; gap: 0 32px; margin-top: 12px; border-top: 1px solid var(--line-strong); }
+.teach__points li { display: grid; grid-template-columns: 44px 1fr; gap: 4px 12px; align-content: start; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.teach__points .num { grid-row: span 2; font-size: 26px; padding-top: 2px; }
+.teach__points h3 { font-size: 16px; font-weight: 600; letter-spacing: .03em; text-transform: uppercase; line-height: 1.3; }
+.teach__points p { font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+@media (min-width: 640px) { .teach__points { grid-template-columns: 1fr 1fr; } }
+
+.teach__shots { display: grid; gap: 14px; align-items: start; }
+@media (min-width: 640px) { .teach__shots { grid-template-columns: 1fr 1fr; } }
+.teach__shots button {
+  display: block; padding: 0; border: 1px solid var(--line); border-radius: 4px; overflow: hidden;
+  background: var(--paper); cursor: zoom-in;
+  box-shadow: 0 18px 40px -24px rgba(43, 35, 32, .45);
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+@media (min-width: 640px) { .teach__shots button:nth-child(2) { margin-top: 48px; } }
+.teach__shots button:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -24px rgba(43, 35, 32, .5); }
+.teach__shots img { width: 100%; height: auto; }
+
+.teach__join {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px;
+  padding-top: 28px; border-top: 1px solid var(--line-strong);
+}
+.teach__terms { max-width: 52ch; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+.teach__terms strong { display: block; margin-bottom: 4px; font-size: 17px; font-weight: 600; color: var(--ink); }
+
+@media (min-width: 900px) {
+  .teach {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "body shots" "join join";
+    column-gap: clamp(40px, 5vw, 72px);
+  }
+  .teach__body { grid-area: body; }
+  .teach__shots { grid-area: shots; align-self: center; }
+  .teach__join { grid-area: join; }
+}
 
 /* ---------- Отзывы ---------- */
 .reviews__top { display: grid; gap: 36px; margin-bottom: clamp(40px, 5vw, 64px); }
@@ -652,5 +682,5 @@ details[open] .acc__icon::after { transform: rotate(0deg); }
   .topbar .icon-link { display: none; }
   .btn { min-height: 50px; padding: 0 22px; }
   .hero__actions .btn { flex: 1 1 100%; }
-  .review, .teach-card { padding: 26px; }
+  .review { padding: 26px; }
 }

@@ -138,11 +138,11 @@
     update();
   });
 
-  /* ---------- Лайтбокс для фото с конференций ---------- */
+  /* ---------- Лайтбокс: фото с конференций и скриншоты чата ---------- */
   const dialog = $('.lightbox');
   const dialogImg = $('img', dialog);
   const counter = $('.lightbox__count', dialog);
-  const shots = $$('.gallery [data-full]');
+  let shots = [];
   let index = 0;
 
   const show = (i) => {
@@ -152,7 +152,14 @@
     dialogImg.alt = $('img', shot).alt;
     counter.textContent = `${index + 1} / ${shots.length}`;
   };
-  shots.forEach((shot, i) => shot.addEventListener('click', () => { show(i); dialog.showModal(); }));
+  $$('[data-lightbox]').forEach((group) => {
+    const items = $$('[data-full]', group);
+    items.forEach((shot, i) => shot.addEventListener('click', () => {
+      shots = items;
+      show(i);
+      dialog.showModal();
+    }));
+  });
   $('[data-lb="prev"]', dialog).addEventListener('click', () => show(index - 1));
   $('[data-lb="next"]', dialog).addEventListener('click', () => show(index + 1));
   $('[data-lb="close"]', dialog).addEventListener('click', () => dialog.close());
