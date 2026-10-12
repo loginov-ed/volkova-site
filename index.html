@@ -61,7 +61,22 @@
         <a class="icon-link" href="https://www.instagram.com/dr.volkova.gyn" target="_blank" rel="noopener" aria-label="Instagram* @dr.volkova.gyn">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.2" cy="6.8" r=".9" class="fill"/></svg>
         </a>
-        <a class="btn btn--sm" href="https://df.clinic/staff/volkova-ekaterina-nikolaevna" target="_blank" rel="noopener">Записаться</a>
+        <div class="booking" data-booking>
+          <button class="btn btn--sm" type="button" aria-expanded="false" aria-haspopup="true">
+            Записаться
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="booking__menu" hidden>
+            <a href="https://df.clinic/staff/volkova-ekaterina-nikolaevna" target="_blank" rel="noopener">
+              <img src="assets/img/logos/delta.png" width="36" height="36" alt="">
+              <span><strong>Очно</strong><small>Delta Fertility Clinic</small></span>
+            </a>
+            <a href="https://t.me/dr_volkova_gyn?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%82%D0%B5%D0%BB%D0%B0%20%D0%B1%D1%8B%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E." target="_blank" rel="noopener" data-tg-text="Здравствуйте! Хотела бы записаться на онлайн-консультацию.">
+              <span class="booking__tg"><svg class="tg" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.2 4.1 3.3 11c-1 .4-1 1.8 0 2.1l4.4 1.4 1.7 5.3c.2.7 1.1.9 1.6.4l2.5-2.4 4.6 3.4c.6.4 1.5.1 1.6-.6l3-14.9c.2-.9-.7-1.6-1.5-1.2Z"/><path d="m7.7 14.5 10-6.6-7.8 7.9"/></svg></span>
+              <span><strong>Онлайн</strong><small>консультация в&nbsp;Telegram</small></span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -103,12 +118,15 @@
               и&nbsp;даю <em class="serif">ясный план</em> дальнейших действий.
               Бережно, без&nbsp;акушерского насилия, на&nbsp;основе доказательной медицины.
             </p>
-            <div class="hero__actions">
-              <a class="btn" href="https://df.clinic/staff/volkova-ekaterina-nikolaevna" target="_blank" rel="noopener">
-                Записаться на приём
-                <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <div class="book">
+              <a class="btn btn--book" href="https://df.clinic/staff/volkova-ekaterina-nikolaevna" target="_blank" rel="noopener">
+                <img class="btn__logo" src="assets/img/logos/delta.png" width="26" height="26" alt="">
+                Записаться очно
               </a>
-              <a class="btn btn--ghost" href="#online">Онлайн-консультация</a>
+              <a class="btn btn--ghost btn--book" href="https://t.me/dr_volkova_gyn?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%82%D0%B5%D0%BB%D0%B0%20%D0%B1%D1%8B%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E." target="_blank" rel="noopener" data-tg-text="Здравствуйте! Хотела бы записаться на онлайн-консультацию.">
+                <svg class="tg" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.2 4.1 3.3 11c-1 .4-1 1.8 0 2.1l4.4 1.4 1.7 5.3c.2.7 1.1.9 1.6.4l2.5-2.4 4.6 3.4c.6.4 1.5.1 1.6-.6l3-14.9c.2-.9-.7-1.6-1.5-1.2Z"/><path d="m7.7 14.5 10-6.6-7.8 7.9"/></svg>
+                Записаться онлайн
+              </a>
             </div>
             <p class="hero__place">
               Принимаю в&nbsp;<strong>Delta Fertility Clinic</strong>,<br>
@@ -301,10 +319,16 @@
               <span class="price__val">4&nbsp;000&nbsp;₽</span>
             </li>
           </ul>
-          <a class="btn prices__cta" href="https://df.clinic/staff/volkova-ekaterina-nikolaevna" target="_blank" rel="noopener">
-            Записаться на приём
-            <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+          <div class="book prices__cta">
+            <a class="btn btn--book" href="https://df.clinic/staff/volkova-ekaterina-nikolaevna" target="_blank" rel="noopener">
+              <img class="btn__logo" src="assets/img/logos/delta.png" width="26" height="26" alt="">
+              Записаться очно
+            </a>
+            <a class="btn btn--ghost btn--book" href="https://t.me/dr_volkova_gyn?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%82%D0%B5%D0%BB%D0%B0%20%D0%B1%D1%8B%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E." target="_blank" rel="noopener" data-tg-text="Здравствуйте! Хотела бы записаться на онлайн-консультацию.">
+              <svg class="tg" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.2 4.1 3.3 11c-1 .4-1 1.8 0 2.1l4.4 1.4 1.7 5.3c.2.7 1.1.9 1.6.4l2.5-2.4 4.6 3.4c.6.4 1.5.1 1.6-.6l3-14.9c.2-.9-.7-1.6-1.5-1.2Z"/><path d="m7.7 14.5 10-6.6-7.8 7.9"/></svg>
+              Записаться онлайн
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -453,7 +477,7 @@
     <!-- ============ ВЫСТУПЛЕНИЯ И ПОДКАСТЫ ============ -->
     <section class="section section--alt" id="media">
       <div class="wrap">
-        <div class="section__head section__head--row" data-reveal>
+        <div class="section__head" data-reveal>
           <p class="eyebrow">Просвещение</p>
           <h2 class="h2">Подкасты<br>и&nbsp;выступления</h2>
         </div>
@@ -517,7 +541,7 @@
     <!-- ============ ОБРАЗОВАТЕЛЬНАЯ ДЕЯТЕЛЬНОСТЬ ============ -->
     <section class="section" id="teaching">
       <div class="wrap">
-        <div class="section__head section__head--row" data-reveal>
+        <div class="section__head" data-reveal>
           <p class="eyebrow">Для коллег</p>
           <h2 class="h2">Образовательная<br>деятельность</h2>
         </div>
@@ -594,9 +618,17 @@
                 <span>средняя оценка на&nbsp;ПроДокторов, НаПоправку и&nbsp;других сайтах отзывов</span>
               </div>
             </div>
-            <div class="score__links">
-              <a class="link" href="https://prodoctorov.ru/spb/vrach/971112-volkova/#otzivi" target="_blank" rel="noopener">Все отзывы на&nbsp;ПроДокторов <svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="link" href="https://napopravku.ru/spb/doctor-profile/volkova-ekaterina-nikolaevna/" target="_blank" rel="noopener">НаПоправку <svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            <div class="platforms">
+              <a class="platform" href="https://prodoctorov.ru/spb/vrach/971112-volkova/#otzivi" target="_blank" rel="noopener">
+                <img src="assets/img/logos/prodoctorov.png" width="40" height="40" alt="">
+                <span><strong>ПроДокторов</strong><small>все отзывы</small></span>
+                <svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+              <a class="platform" href="https://napopravku.ru/spb/doctor-profile/volkova-ekaterina-nikolaevna/" target="_blank" rel="noopener">
+                <img src="assets/img/logos/napopravku.png" width="40" height="40" alt="">
+                <span><strong>НаПоправку</strong><small>все отзывы</small></span>
+                <svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
             </div>
           </div>
         </div>
@@ -634,12 +666,15 @@
           <div>
             <p class="eyebrow">Запись</p>
             <p class="contacts__big">Очно и&nbsp;онлайн</p>
-            <div class="contacts__actions">
-              <a class="btn" href="https://df.clinic/staff/volkova-ekaterina-nikolaevna" target="_blank" rel="noopener">
-                Записаться на приём
-                <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <div class="book">
+              <a class="btn btn--book" href="https://df.clinic/staff/volkova-ekaterina-nikolaevna" target="_blank" rel="noopener">
+                <img class="btn__logo" src="assets/img/logos/delta.png" width="26" height="26" alt="">
+                Записаться очно
               </a>
-              <a class="link" href="https://t.me/dr_volkova_gyn?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%82%D0%B5%D0%BB%D0%B0%20%D0%B1%D1%8B%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E." target="_blank" rel="noopener" data-tg-text="Здравствуйте! Хотела бы записаться на онлайн-консультацию.">Онлайн — через Telegram</a>
+              <a class="btn btn--ghost btn--book" href="https://t.me/dr_volkova_gyn?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%82%D0%B5%D0%BB%D0%B0%20%D0%B1%D1%8B%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E." target="_blank" rel="noopener" data-tg-text="Здравствуйте! Хотела бы записаться на онлайн-консультацию.">
+                <svg class="tg" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.2 4.1 3.3 11c-1 .4-1 1.8 0 2.1l4.4 1.4 1.7 5.3c.2.7 1.1.9 1.6.4l2.5-2.4 4.6 3.4c.6.4 1.5.1 1.6-.6l3-14.9c.2-.9-.7-1.6-1.5-1.2Z"/><path d="m7.7 14.5 10-6.6-7.8 7.9"/></svg>
+                Записаться онлайн
+              </a>
             </div>
           </div>
           <div>

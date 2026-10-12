@@ -37,6 +37,21 @@
   window.addEventListener('resize', onScroll);
   onScroll();
 
+  /* ---------- Кнопка «Записаться» в шапке: очно / онлайн ---------- */
+  const booking = $('[data-booking]');
+  if (booking) {
+    const toggle = $('button', booking);
+    const menu = $('.booking__menu', booking);
+    const setOpen = (open) => {
+      menu.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    toggle.addEventListener('click', () => setOpen(menu.hidden));
+    document.addEventListener('click', (e) => { if (!booking.contains(e.target)) setOpen(false); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+    $$('a', menu).forEach((a) => a.addEventListener('click', () => setOpen(false)));
+  }
+
   /* ---------- Появление блоков ---------- */
   const revealables = $$('[data-reveal]');
   if ('IntersectionObserver' in window) {
@@ -84,8 +99,18 @@
     const name = document.createElement('strong');
     name.textContent = r.author || 'Пациентка';
     who.append(name, r.date ? ` · ${r.date}` : '');
+    const source = r.source || 'ПроДокторов';
     const src = document.createElement(r.url ? 'a' : 'span');
-    src.textContent = r.source || 'ПроДокторов';
+    src.className = 'review__src';
+    const logo = { 'ПроДокторов': 'prodoctorov', 'НаПоправку': 'napopravku' }[source];
+    if (logo) {
+      const img = document.createElement('img');
+      img.src = `assets/img/logos/${logo}.png`;
+      img.alt = '';
+      img.width = img.height = 20;
+      src.append(img);
+    }
+    src.append(r.url ? `Читать на ${source}` : source);
     if (r.url) { src.href = r.url; src.target = '_blank'; src.rel = 'noopener'; }
     foot.append(who, src);
 
