@@ -34,6 +34,7 @@ html {
   scroll-padding-top: calc(var(--topbar) + 16px);
 }
 html:has(dialog[open]) { overflow: hidden; }
+html, body { overscroll-behavior-y: none; }
 body {
   margin: 0;
   background: var(--bg);
@@ -142,9 +143,7 @@ svg .fill { fill: currentColor; stroke: none; }
 .topbar {
   position: sticky; top: 0; z-index: 40;
   height: var(--topbar);
-  background: color-mix(in srgb, var(--bg) 86%, transparent);
-  backdrop-filter: saturate(1.4) blur(14px);
-  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  background: var(--bg);
   border-bottom: 1px solid transparent;
   transition: border-color .3s;
 }
@@ -245,11 +244,10 @@ svg .fill { fill: currentColor; stroke: none; }
 
 /* Факты — «таймлайн» с точками */
 .facts {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 24px;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 0;
   margin-top: clamp(48px, 6vw, 88px);
-  border-top: 1px solid var(--line-strong);
 }
-.fact { position: relative; display: grid; gap: 6px; align-content: start; padding-top: 22px; padding-right: 12px; }
+.fact { position: relative; display: grid; gap: 6px; align-content: start; padding-top: 22px; padding-right: 24px; border-top: 1px solid var(--line-strong); }
 .fact::before {
   content: ""; position: absolute; top: -4px; left: 0;
   width: 7px; height: 7px; border-radius: 50%; background: var(--ink);
@@ -687,7 +685,6 @@ details[open] .acc__icon::after { transform: rotate(0deg); }
 .footer__inner { display: grid; gap: 10px; }
 .footer__name { color: var(--on-accent); font-size: 15px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px; }
 .footer__name em { font-family: var(--serif); font-size: 20px; letter-spacing: 0; text-transform: none; color: var(--accent-soft); }
-.footer__warn { color: var(--on-accent); font-size: 14px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
 
 /* ---------- Лайтбокс ---------- */
 .lightbox {
