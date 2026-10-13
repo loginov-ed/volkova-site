@@ -200,47 +200,50 @@ svg .fill { fill: currentColor; stroke: none; }
 
 /* ---------- Первый экран ---------- */
 .hero { padding-top: clamp(28px, 5vw, 64px); padding-bottom: clamp(64px, 8vw, 112px); }
+.hero__main { display: grid; gap: 36px; }
+.hero__intro { display: grid; gap: 20px; align-content: start; }
 .hero__name {
   display: flex; flex-direction: column;
-  margin-top: clamp(18px, 3vw, 32px);
-  font-size: clamp(44px, 13vw, 152px);
+  font-size: clamp(44px, 13vw, 140px);
   line-height: .9; font-weight: 300; color: var(--deep);
   letter-spacing: -.04em; text-transform: uppercase;
 }
-.hero__line--second {
-  display: flex; align-items: flex-end; justify-content: flex-end; gap: clamp(20px, 4vw, 64px);
-}
+.hero__line--second { padding-left: .55em; }
 .hero__role {
   font-size: 13px; line-height: 1.45; font-weight: 500;
-  letter-spacing: .14em; color: var(--ink-2);
-  padding-bottom: .9em; text-align: right;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2);
 }
-.hero__grid {
-  display: grid; gap: 40px;
-  margin-top: clamp(36px, 5vw, 72px);
-}
-.hero__text { display: flex; flex-direction: column; gap: 32px; align-self: center; }
+.hero__text { display: flex; flex-direction: column; gap: 28px; }
 .lead { font-size: clamp(19px, 1.7vw, 23px); line-height: 1.5; max-width: 34ch; text-wrap: pretty; }
-
 .hero__place { font-size: 14px; color: var(--ink-2); padding-left: 16px; border-left: 1px solid var(--line-strong); }
 .hero__place strong { font-weight: 600; color: var(--ink); }
-.hero__photo { position: relative; overflow: hidden; border-radius: 2px; aspect-ratio: 4 / 3; background: var(--bg-alt); }
-.hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 48% 26%; }
-.hero__photo figcaption {
-  position: absolute; left: 16px; bottom: 16px;
-  padding: 7px 12px; border-radius: 999px;
-  background: color-mix(in srgb, var(--paper) 88%, transparent);
-  font-size: 12px; letter-spacing: .06em; color: var(--ink-2);
-}
 @media (min-width: 900px) {
-  .hero__grid { grid-template-columns: 1fr 1.25fr; gap: clamp(40px, 5vw, 80px); }
-  .hero__photo { aspect-ratio: 16 / 11; }
-}
-@media (max-width: 899px) {
-  .hero__line--second { flex-direction: column-reverse; align-items: flex-end; gap: 14px; }
-  .hero__role { padding-bottom: 0; }
+  .hero__main {
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-areas: "intro portrait" "text portrait";
+    column-gap: clamp(32px, 4vw, 64px); row-gap: clamp(32px, 4vw, 56px);
+    align-items: start;
+  }
+  .hero__intro { grid-area: intro; padding-top: clamp(8px, 2vw, 32px); }
+  .hero__text { grid-area: text; }
+  .hero__portrait { grid-area: portrait; align-self: end; }
+  .hero__name { font-size: clamp(60px, 9vw, 140px); }
 }
 @media (max-width: 640px) { .hero__role { font-size: 11px; } }
+
+/* Портрет на арке */
+.hero__portrait {
+  position: relative; display: flex; justify-content: center; align-items: flex-end;
+  height: clamp(420px, 48vw, 680px);
+}
+.hero__portrait::before {
+  content: ""; position: absolute; bottom: 0; left: 50%; translate: -50% 0;
+  width: min(82%, 460px); height: 86%;
+  border-radius: 999px 999px 0 0;
+  background: linear-gradient(180deg, var(--accent-soft) 0%, #8AA3CA 100%);
+}
+.hero__portrait picture { position: relative; height: 100%; display: flex; align-items: flex-end; }
+.hero__portrait img { height: 100%; width: auto; max-width: none; object-fit: contain; object-position: bottom; }
 
 /* Факты — «таймлайн» с точками */
 .facts {

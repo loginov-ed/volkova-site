@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3b07ff1e">
+  <link rel="stylesheet" href="styles.css?v=10b53f37">
 
   <script>document.documentElement.classList.add('js')</script>
   <script type="application/ld+json">
@@ -104,17 +104,24 @@
     <!-- ============ ПЕРВЫЙ ЭКРАН ============ -->
     <section class="hero" id="top">
       <div class="wrap">
-        <p class="eyebrow" data-reveal>Санкт-Петербург · приём очно и онлайн</p>
+        <div class="hero__main">
+          <div class="hero__intro" data-reveal>
+            <p class="eyebrow">Санкт-Петербург · приём очно и&nbsp;онлайн</p>
+            <h1 class="hero__name">
+              <span class="hero__line">Екатерина</span>
+              <span class="hero__line hero__line--second">Волкова</span>
+            </h1>
+            <p class="hero__role">Акушер-гинеколог, врач ультразвуковой диагностики</p>
+          </div>
 
-        <h1 class="hero__name" data-reveal>
-          <span class="hero__line">Екатерина</span>
-          <span class="hero__line hero__line--second">
-            <span class="hero__role">Акушер-гинеколог,<br>врач ультразвуковой<br>диагностики</span>
-            <span>Волкова</span>
-          </span>
-        </h1>
+          <figure class="hero__portrait" data-reveal>
+            <picture>
+              <source srcset="assets/img/portrait.webp" type="image/webp">
+              <img src="assets/img/portrait.png" width="674" height="1180"
+                   alt="Екатерина Волкова, акушер-гинеколог" fetchpriority="high">
+            </picture>
+          </figure>
 
-        <div class="hero__grid">
           <div class="hero__text" data-reveal>
             <p class="lead">
               Помогаю разобраться в&nbsp;женском здоровье: подробно объясняю, что происходит,
@@ -136,13 +143,6 @@
               13-я линия В.&nbsp;О., 10 · м.&nbsp;Василеостровская
             </p>
           </div>
-
-          <figure class="hero__photo" data-reveal>
-            <img src="assets/img/hero.jpg" width="1067" height="1600"
-                 alt="Екатерина Волкова выступает с докладом на медицинской конференции"
-                 fetchpriority="high">
-            <figcaption>Выступление на&nbsp;конференции</figcaption>
-          </figure>
         </div>
 
         <ul class="facts" data-reveal>
