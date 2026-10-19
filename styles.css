@@ -734,6 +734,40 @@ details[open] .acc__icon::after { transform: rotate(0deg); }
   .review { padding: 26px; }
 }
 
+/* ---------- Правки маркетинга ---------- */
+.hero__usp {
+  font-size: clamp(17px, 1.7vw, 24px); line-height: 1.2; font-weight: 500;
+  letter-spacing: .01em; text-transform: none; color: var(--deep);
+}
+.hero__usp .serif { font-size: 1.25em; }
+.hero__onevisit {
+  max-width: 44ch; padding: 14px 18px;
+  background: var(--paper); border-left: 3px solid var(--accent); border-radius: 2px;
+  font-size: 15px; line-height: 1.5; color: var(--ink-2);
+}
+.hero__onevisit strong { color: var(--deep); font-weight: 600; }
+
+.calm { display: grid; gap: 24px; }
+.calm__list { display: grid; gap: 0; max-width: 34ch; border-top: 1px solid var(--line-strong); }
+.calm__list li {
+  position: relative; padding: 14px 0 14px 34px; border-bottom: 1px solid var(--line);
+  font-size: clamp(17px, 1.5vw, 20px); line-height: 1.4;
+}
+.calm__list li::before {
+  content: ""; position: absolute; left: 2px; top: 1.15em; width: 14px; height: 7px;
+  border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent);
+  transform: rotate(-45deg);
+}
+
+.online__note { background: #fff; color: var(--deep); border-color: #fff; }
+.online__note strong { color: var(--accent); }
+
+.gallery__note { margin-top: 10px; max-width: 62ch; font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+
+@media (max-width: 640px) {
+  .hero__role.hero__usp { font-size: 16px; }
+}
+
 /* ---------- Компьютер: плотнее (мобильная версия не меняется) ---------- */
 @media (min-width: 900px) {
   :root { --section: clamp(64px, 6.5vw, 100px); }
