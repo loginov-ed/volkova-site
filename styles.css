@@ -222,7 +222,7 @@ svg .fill { fill: currentColor; stroke: none; }
 .hero__text { display: flex; flex-direction: column; gap: 32px; align-self: center; }
 .lead { font-size: clamp(19px, 1.7vw, 23px); line-height: 1.5; max-width: 34ch; text-wrap: pretty; }
 
-.hero__place { font-size: 14px; color: var(--ink-2); padding-left: 16px; border-left: 1px solid var(--line-strong); }
+.hero__place { display: grid; gap: 6px; font-size: 14px; color: var(--ink-2); padding-left: 16px; border-left: 1px solid var(--line-strong); }
 .hero__place strong { font-weight: 600; color: var(--ink); }
 @media (min-width: 900px) {
   .hero__grid { grid-template-columns: 1fr 1.25fr; gap: clamp(40px, 5vw, 80px); }
@@ -443,7 +443,7 @@ details[open] .acc__icon::after { transform: rotate(0deg); }
 .timeline h3 { font-size: clamp(18px, 1.7vw, 22px); font-weight: 500; text-transform: uppercase; letter-spacing: .02em; line-height: 1.2; }
 .timeline p { font-size: 15px; color: var(--ink-2); max-width: 30ch; }
 @media (min-width: 900px) {
-  .timeline { grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line-strong); }
+  .timeline { grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line-strong); }
   .timeline li, .timeline li:last-child { padding: 28px 28px 0 0; }
   .timeline li::before { left: 0; top: -4px; }
   .timeline li:not(:last-child)::after { display: none; }
@@ -767,6 +767,8 @@ details[open] .acc__icon::after { transform: rotate(0deg); }
 @media (max-width: 640px) {
   .hero__role.hero__usp { font-size: 16px; }
 }
+
+.contacts__big--second { margin-top: 18px; }
 
 /* ---------- Компьютер: плотнее (мобильная версия не меняется) ---------- */
 @media (min-width: 900px) {
