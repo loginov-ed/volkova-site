@@ -2,6 +2,16 @@
    Екатерина Волкова — сайт-визитка
    ========================================================= */
 
+/* ---------- Шрифты (лежат на сайте, без Google Fonts) ---------- */
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 300 600; font-display: swap;
+  src: url("assets/fonts/manrope-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 300 600; font-display: swap;
+  src: url("assets/fonts/manrope-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "PT Serif"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("assets/fonts/pt-serif-italic-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "PT Serif"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("assets/fonts/pt-serif-italic-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 :root {
   --bg: #EDF3FA;
   --bg-alt: #DFE8F4;
@@ -17,7 +27,7 @@
   --on-accent: #F5F8FD;
 
   --sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --serif: "Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
+  --serif: "PT Serif", Georgia, "Times New Roman", serif;
 
   --wrap: 1320px;
   --gutter: clamp(16px, 4vw, 56px);
@@ -93,8 +103,8 @@ svg .fill { fill: currentColor; stroke: none; }
   letter-spacing: -.035em; text-transform: uppercase;
 }
 .serif {
-  font-family: var(--serif); font-style: italic; font-weight: 500;
-  font-size: 1.12em; letter-spacing: 0; text-transform: none;
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: 1em; letter-spacing: 0; text-transform: none;
   color: var(--accent);
 }
 .accent { color: var(--accent); }
@@ -150,7 +160,7 @@ svg .fill { fill: currentColor; stroke: none; }
 .topbar.is-scrolled { border-bottom-color: var(--line); }
 .topbar__inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .logo { display: inline-flex; align-items: baseline; gap: 6px; font-size: 15px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; }
-.logo em { font-family: var(--serif); font-size: 22px; letter-spacing: 0; text-transform: none; color: var(--accent); }
+.logo em { font-family: var(--serif); font-size: 19px; letter-spacing: 0; text-transform: none; color: var(--accent); }
 .topbar__right { display: flex; align-items: center; gap: 6px; }
 .icon-link {
   display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
@@ -284,7 +294,7 @@ svg .fill { fill: currentColor; stroke: none; }
 }
 .principles { display: grid; grid-template-columns: 1fr; border-top: 1px solid var(--line-strong); }
 .principles li { display: grid; gap: 14px; align-content: start; padding: 32px 0; border-bottom: 1px solid var(--line); }
-.principles .num { font-size: clamp(52px, 5vw, 72px); margin-bottom: 8px; }
+.principles .num { font-size: clamp(40px, 4vw, 56px); margin-bottom: 8px; }
 .principles h3 { font-size: 19px; font-weight: 600; letter-spacing: .02em; text-transform: uppercase; }
 .principles p { color: var(--ink-2); max-width: 36ch; }
 @media (min-width: 900px) {
@@ -311,7 +321,7 @@ svg .fill { fill: currentColor; stroke: none; }
   padding: 26px 0; cursor: pointer; list-style: none;
 }
 .accordion summary::-webkit-details-marker { display: none; }
-.accordion summary .num { font-size: 26px; }
+.accordion summary .num { font-size: 21px; }
 .acc__title {
   font-size: clamp(19px, 2vw, 27px); line-height: 1.2; font-weight: 400;
   text-transform: uppercase; letter-spacing: .005em; text-wrap: balance;
@@ -439,7 +449,7 @@ details[open] .acc__icon::after { transform: rotate(0deg); }
   width: 1px; background: var(--line-strong);
 }
 .timeline li.is-current::before { background: var(--accent); box-shadow: 0 0 0 5px var(--accent-soft); }
-.timeline__year { font-family: var(--serif); font-style: italic; font-size: 22px; line-height: 1; color: var(--accent); }
+.timeline__year { font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1; color: var(--accent); }
 .timeline h3 { font-size: clamp(18px, 1.7vw, 22px); font-weight: 500; text-transform: uppercase; letter-spacing: .02em; line-height: 1.2; }
 .timeline p { font-size: 15px; color: var(--ink-2); max-width: 30ch; }
 @media (min-width: 900px) {
@@ -457,7 +467,7 @@ details[open] .acc__icon::after { transform: rotate(0deg); }
 }
 .edu__list { border-top: 1px solid var(--line-strong); }
 .edu__list li { display: grid; grid-template-columns: 1fr; gap: 6px; padding: 24px 0; border-bottom: 1px solid var(--line); }
-.edu__year { font-family: var(--serif); font-style: italic; font-size: 22px; line-height: 1.1; color: var(--accent); }
+.edu__year { font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.1; color: var(--accent); }
 .edu__list h3 { font-size: 17px; font-weight: 500; line-height: 1.4; }
 .edu__list p { font-size: 15px; color: var(--ink-2); margin-top: 4px; }
 @media (min-width: 640px) { .edu__list li { grid-template-columns: 140px 1fr; gap: 24px; } }
@@ -533,11 +543,11 @@ details[open] .acc__icon::after { transform: rotate(0deg); }
   background: var(--bg-alt); border-radius: 2px;
 }
 .teach__body { display: grid; gap: 22px; align-content: start; }
-.teach__quote { font-family: var(--serif); font-style: italic; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.15; color: var(--accent); text-wrap: balance; }
+.teach__quote { font-family: var(--serif); font-style: italic; font-size: clamp(23px, 2.2vw, 30px); line-height: 1.2; color: var(--accent); text-wrap: balance; }
 .teach__lead { max-width: 46ch; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.55; text-wrap: pretty; }
 .teach__points { display: grid; gap: 0 32px; margin-top: 12px; border-top: 1px solid var(--line-strong); }
 .teach__points li { display: grid; grid-template-columns: 44px 1fr; gap: 4px 12px; align-content: start; padding: 20px 0; border-bottom: 1px solid var(--line); }
-.teach__points .num { grid-row: span 2; font-size: 26px; padding-top: 2px; }
+.teach__points .num { grid-row: span 2; font-size: 21px; padding-top: 2px; }
 .teach__points h3 { font-size: 16px; font-weight: 600; letter-spacing: .03em; text-transform: uppercase; line-height: 1.3; }
 .teach__points p { font-size: 15px; line-height: 1.5; color: var(--ink-2); }
 @media (min-width: 640px) { .teach__points { grid-template-columns: 1fr 1fr; } }
@@ -689,7 +699,7 @@ details[open] .acc__icon::after { transform: rotate(0deg); }
 .footer { background: var(--ink); color: rgba(245, 248, 253, .66); padding: 56px 0 calc(96px + env(safe-area-inset-bottom)); }
 .footer__inner { display: grid; gap: 10px; }
 .footer__name { color: var(--on-accent); font-size: 15px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px; }
-.footer__name em { font-family: var(--serif); font-size: 20px; letter-spacing: 0; text-transform: none; color: var(--accent-soft); }
+.footer__name em { font-family: var(--serif); font-size: 17px; letter-spacing: 0; text-transform: none; color: var(--accent-soft); }
 
 /* ---------- Лайтбокс ---------- */
 .lightbox {
@@ -739,7 +749,7 @@ details[open] .acc__icon::after { transform: rotate(0deg); }
   font-size: clamp(17px, 1.7vw, 24px); line-height: 1.2; font-weight: 500;
   letter-spacing: .01em; text-transform: none; color: var(--deep);
 }
-.hero__usp .serif { font-size: 1.25em; }
+.hero__usp .serif { font-size: 1.08em; }
 .hero__onevisit {
   max-width: 44ch; padding: 14px 18px;
   background: var(--paper); border-left: 3px solid var(--accent); border-radius: 2px;
@@ -786,7 +796,7 @@ details[open] .acc__icon::after { transform: rotate(0deg); }
   .intro { margin-bottom: 72px; }
   .statement { font-size: clamp(26px, 3vw, 44px); }
   .principles li { padding-top: 28px; }
-  .principles .num { font-size: 56px; margin-bottom: 0; }
+  .principles .num { font-size: 44px; margin-bottom: 0; }
   .accordion summary { padding: 20px 0; }
   .acc__list { padding-bottom: 22px; }
   .acc__list li { padding: 8px 0 8px 22px; }
