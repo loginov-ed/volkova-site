@@ -772,6 +772,9 @@ details[open] .acc__icon::after { transform: rotate(0deg); }
 
 .price-more { display: grid; gap: 14px; margin-top: 28px; }
 .price-more p { font-size: 15px; color: var(--ink-2); }
+.price-more .platform { gap: 10px; padding-right: 12px; }
+.price-more .platform img { width: 36px; height: 36px; }
+.price-more .platforms { gap: 8px; }
 
 /* ---------- Компьютер: плотнее (мобильная версия не меняется) ---------- */
 @media (min-width: 900px) {
